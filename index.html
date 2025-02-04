@@ -3,88 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 聊天机器人方案</title>
+    <title>AI 聊天机器人专业版方案</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #1a237e;
-            --primary-light: #534bae;
-            --success-color: #2e7d32;
-            --warning-color: #ff9800;
-            --danger-color: #d32f2f;
-            --text-primary: #2c3e50;
-            --text-secondary: #455a64;
-            --background-gradient: linear-gradient(145deg, #f6f8fc 0%, #e9eef6 100%);
-            --card-shadow: 0 10px 20px rgba(0,0,0,0.08);
-            --transition-default: all 0.3s ease;
-        }
-
         body {
             font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
             margin: 0;
             padding: 0;
-            background: var(--background-gradient);
-            color: var(--text-primary);
+            background: linear-gradient(145deg, #f6f8fc 0%, #e9eef6 100%);
+            color: #2c3e50;
             line-height: 1.6;
-            min-height: 100vh;
         }
         
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 30px 20px;
+            padding: 20px;
         }
         
         .header {
             text-align: center;
             margin-bottom: 50px;
-            padding: 40px 20px;
+            padding: 30px 20px;
             background: white;
             border-radius: 20px;
-            box-shadow: var(--card-shadow);
-            animation: fadeInDown 0.8s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
         
         .header h1 {
             font-size: 2.5em;
-            color: var(--primary-color);
-            margin: 0 0 20px 0;
+            color: #1a237e;
+            margin-bottom: 20px;
             font-weight: 700;
         }
         
         .currency-note {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            background: linear-gradient(135deg, #1a237e 0%, #534bae 100%);
             color: white;
-            padding: 15px 20px;
+            padding: 15px;
             border-radius: 12px;
             margin: 20px auto;
             max-width: 600px;
             font-size: 1.1em;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .section {
-            margin-bottom: 40px;
-            animation: fadeIn 0.8s ease;
         }
         
         .card {
             background: white;
             border-radius: 20px;
-            padding: 35px;
+            padding: 25px;
             margin: 20px auto;
             max-width: 600px;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition-default);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
         
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        @media (min-width: 768px) {
+            .card {
+                padding: 35px;
+            }
         }
         
         .card-header {
@@ -96,25 +72,21 @@
         
         .card-title {
             font-size: 2em;
-            color: var(--primary-color);
+            color: #1a237e;
             margin: 0;
             font-weight: 700;
         }
         
         .price {
-            font-size: 3.5em;
-            color: var(--text-primary);
+            font-size: 3em;
+            color: #2c3e50;
             margin: 20px 0;
             font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
         }
         
         .price span {
             font-size: 0.4em;
-            color: var(--text-secondary);
+            color: #666;
             font-weight: normal;
         }
         
@@ -125,25 +97,17 @@
         }
         
         .features li {
-            padding: 15px 0;
+            padding: 12px 0;
             border-bottom: 1px solid #f0f0f0;
             display: flex;
             align-items: flex-start;
             line-height: 1.6;
             font-size: 1.05em;
-            transition: var(--transition-default);
-        }
-        
-        .features li:hover {
-            background: #f8fafd;
-            padding-left: 10px;
-            padding-right: 10px;
-            border-radius: 8px;
         }
         
         .features li:before {
             content: "✓";
-            color: var(--success-color);
+            color: #4CAF50;
             margin-right: 12px;
             font-weight: bold;
             flex-shrink: 0;
@@ -154,202 +118,111 @@
             background: #f0f4ff;
             border-radius: 12px;
             padding: 20px;
-            margin: 25px 0;
+            margin: 20px 0;
             font-size: 0.95em;
-            color: var(--text-secondary);
-            border-left: 4px solid var(--primary-color);
-            transition: var(--transition-default);
+            color: #455a64;
+            border-left: 4px solid #1a237e;
         }
 
-        .info-box:hover {
-            transform: translateX(5px);
-            background: #e8eeff;
-        }
-
-        .cost-section {
-            background: #e3f2fd;
-            border-radius: 20px;
-            padding: 30px;
-            margin-top: 40px;
-            animation: fadeIn 0.8s ease;
-        }
-
-        .cost-title {
-            color: var(--primary-color);
-            margin: 0 0 25px 0;
-            font-size: 1.8em;
-            text-align: center;
-        }
-
-        .cost-card {
-            background: white;
+        .comparison-box {
+            background: linear-gradient(135deg, #1e88e5 0%, #1565c0 100%);
+            color: white;
             border-radius: 15px;
             padding: 25px;
-            margin: 15px 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: var(--transition-default);
+            margin: 30px 0;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         }
 
-        .cost-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-        }
-
-        .cost-card h3 {
-            color: var(--primary-color);
-            margin: 0 0 15px 0;
-        }
-
-        .data-processing {
-            background: linear-gradient(145deg, #f3e5f5 0%, #e8eaf6 100%);
-            border-radius: 20px;
-            padding: 35px;
-            margin-top: 40px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.05);
-        }
-
-        .comparison-container {
+        .comparison-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .comparison-card {
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            transition: var(--transition-default);
-        }
-
-        .comparison-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-        }
-
-        .price-comparison {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            grid-template-columns: 1fr;
             gap: 20px;
-            margin: 25px 0;
-            flex-wrap: wrap;
-        }
-
-        .price-box {
-            text-align: center;
-            padding: 20px;
-            border-radius: 12px;
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .price-box.traditional {
-            background: linear-gradient(145deg, #fff5f5 0%, #ffebee 100%);
-        }
-
-        .price-box.ai {
-            background: linear-gradient(145deg, #f1f8e9 0%, #e8f5e9 100%);
-        }
-
-        .advantage-list {
-            background: #fafafa;
-            padding: 20px;
-            border-radius: 12px;
             margin-top: 20px;
         }
 
-        .advantage-list ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        @media (min-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        .advantage-list li {
+        .comparison-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .comparison-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .comparison-list {
+            text-align: left;
+            margin: 15px 0 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .comparison-list li {
+            padding: 8px 0;
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
-            padding: 8px;
-            transition: var(--transition-default);
         }
 
-        .advantage-list li:hover {
-            background: white;
-            border-radius: 8px;
-            transform: translateX(5px);
-        }
-
-        .advantage-list li:before {
-            content: "✓";
-            color: var(--success-color);
+        .comparison-list li:before {
+            content: "•";
             margin-right: 10px;
-            font-weight: bold;
+            color: #fff;
         }
-
-        .custom-services {
-            background: #f8f9fa;
+        
+        .addons {
+            background: #f8fafd;
             border-radius: 15px;
-            padding: 30px;
-            margin-top: 40px;
-            border-left: 5px solid var(--primary-color);
-            animation: fadeIn 0.8s ease;
+            padding: 25px;
+            margin-top: 30px;
         }
 
-        .custom-services h3 {
-            color: var(--primary-color);
+        .addons h2 {
+            color: #1a237e;
             margin-top: 0;
         }
 
-        .custom-services ul {
-            color: var(--text-secondary);
-            margin: 15px 0;
-            padding-left: 20px;
+        .addon-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
-        .custom-services li {
-            margin-bottom: 10px;
-            transition: var(--transition-default);
+        .addon-table th, .addon-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
         }
 
-        .custom-services li:hover {
-            transform: translateX(5px);
+        @media (max-width: 600px) {
+            .addon-table th, .addon-table td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .addon-table th {
+            background: #f5f7fa;
+            color: #1a237e;
         }
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px 15px;
-            }
-
-            .card {
-                padding: 25px;
-            }
-
-            .price {
-                font-size: 3em;
-            }
-
-            .comparison-container {
-                grid-template-columns: 1fr;
-            }
-
-            .price-comparison {
-                flex-direction: column;
-            }
-
-            .price-box {
-                width: 100%;
-            }
+        .setup-note {
+            background: #fff3e0;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            border-left: 5px solid #ff9800;
         }
     </style>
 </head>
@@ -362,10 +235,10 @@
             </div>
         </div>
 
-        <div class="card section">
+        <div class="card">
             <div class="card-header">
                 <h2 class="card-title">基础版</h2>
-                <div class="price">\$500<span>/月</span></div>
+                <div class="price">$500<span>/月</span></div>
             </div>
             <ul class="features">
                 <li>2个 AI 聊天机器人</li>
@@ -375,7 +248,7 @@
                 <li>支持 PDF、Word、TXT、URL、Q&A 文件（每个均计为1个可记忆文档）</li>
             </ul>
             <div class="info-box">
-                <strong>关于对话额度说明：</strong>
+                关于对话额度说明：
                 <ul>
                     <li>基础模型：每次回复消耗 1 个额度</li>
                     <li>高级模型：每次回复消耗 10-20 个额度</li>
@@ -383,93 +256,130 @@
             </div>
         </div>
 
-        <div class="cost-section">
-            <h2 class="cost-title">费用明细</h2>
-            <div class="cost-card">
-                <h3>一次性费用</h3>
-                <ul>
-                    <li>基础版设置费：\$200（2个机器人 × \$100/个）</li>
+        <div style="background: #e3f2fd; border-radius: 15px; padding: 25px; margin-top: 30px;">
+            <h2 style="color: #1a237e; margin-top: 0;">费用明细</h2>
+            <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 15px;">
+                <h3 style="color: #1a237e; margin-top: 0;">一次性费用</h3>
+                <ul style="color: #455a64; margin: 15px 0;">
+                    <li>基础版设置费：$200（2个机器人 × $100/个）</li>
                 </ul>
             </div>
             
-            <div class="cost-card">
-                <h3>月度固定费用</h3>
-                <ul>
-                    <li>基础版月费：\$500</li>
-                    <li>技术支持维护费：\$150</li>
-                    <li style="font-weight: bold; color: var(--primary-color);">月度总计：\$650</li>
+            <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 15px;">
+                <h3 style="color: #1a237e; margin-top: 0;">月度固定费用</h3>
+                <ul style="color: #455a64; margin: 15px 0;">
+                    <li>基础版月费：$500</li>
+                    <li>技术支持维护费：$150</li>
+                    <li>月度总计：$650</li>
                 </ul>
             </div>
         </div>
 
-        <div class="data-processing">
-            <h2 style="color: var(--primary-color); text-align: center; margin: 0 0 20px 0;">额外的AI数据处理服务</h2>
-            <p style="text-align: center; color: #5c6bc0; margin-bottom: 30px;">按需付费服务，不包含在月度费用中</p>
+        <div class="addons">
+            <h2>月度可选服务</h2>
+            <table class="addon-table">
+                <tr>
+                    <th>服务项目</th>
+                    <th>费用(USD/月)</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>10个额外可记忆文档</td>
+                    <td>$10</td>
+                    <td>每个机器人可增加10个可记忆文档</td>
+                </tr>
+                <tr>
+                    <td>1,000个额外对话额度</td>
+                    <td>$20</td>
+                    <td>两个机器人共享使用</td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="background: linear-gradient(145deg, #f3e5f5 0%, #e8eaf6 100%); border-radius: 20px; padding: 35px; margin-top: 40px; box-shadow: 0 8px 32px rgba(0,0,0,0.05);">
+            <h2 style="color: #1a237e; margin: 0; text-align: center; font-size: 1.8em; font-weight: 700;">额外的AI数据处理服务</h2>
+            <p style="text-align: center; color: #5c6bc0; margin: 15px 0 30px 0; font-size: 1.1em;">一次性服务，按需使用，不包含在月度费用中</p>
             
-            <div class="comparison-container">
-                <div class="comparison-card">
-                    <h3 style="color: var(--primary-color); text-align: center; margin: 0 0 20px 0;">
-                        图像/扫描类PDF智能处理
-                    </h3>
-                    <div class="price-comparison">
-                        <div class="price-box traditional">
-                            <div style="color: #666;">传统人工处理</div>
-                            <div style="color: var(--danger-color); font-size: 2em; font-weight: 700; margin: 10px 0;">\$1,200</div>
-                            <div style="color: #666;">每1000页</div>
+            <div class="comparison-grid" style="gap: 30px;">
+                <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+                    <h3 style="color: #1a237e; text-align: center; font-size: 1.5em; margin: 0 0 25px 0;">图像/扫描类PDF智能处理</h3>
+                    
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 25px; margin: 25px 0;">
+                        <div style="text-align: center; padding: 20px; background: linear-gradient(145deg, #fff5f5 0%, #ffebee 100%); border-radius: 12px; flex: 1;">
+                            <div style="color: #666; font-size: 1em;">传统人工处理</div>
+                            <div style="color: #d32f2f; font-size: 2em; font-weight: 700; margin: 10px 0;">$1,200</div>
+                            <div style="color: #666; font-size: 0.9em;">每1000页</div>
                         </div>
-                        <div style="text-align: center;">
-                            <div style="color: var(--success-color);">节省83%</div>
-                            <div style="color: var(--primary-color); font-size: 1.8em;">→</div>
+                        
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                            <div style="color: #1a237e; font-size: 1.8em;">→</div>
+                            <div style="color: #4caf50; font-weight: 500; font-size: 0.9em;">节省83%</div>
                         </div>
-                        <div class="price-box ai">
-                            <div style="color: #666;">AI智能处理</div>
-                            <div style="color: var(--success-color); font-size: 2em; font-weight: 700; margin: 10px 0;">$200</div>
-                            <div style="color: #666;">每1000页</div>
+                        
+                        <div style="text-align: center; padding: 20px; background: linear-gradient(145deg, #f1f8e9 0%, #e8f5e9 100%); border-radius: 12px; flex: 1;">
+                            <div style="color: #666; font-size: 1em;">AI智能处理</div>
+                            <div style="color: #2e7d32; font-size: 2em; font-weight: 700; margin: 10px 0;">$200</div>
+                            <div style="color: #666; font-size: 0.9em;">每1000页</div>
                         </div>
                     </div>
                     
-                    <div class="advantage-list">
-                        <div style="color: var(--primary-color); font-weight: 600; margin-bottom: 12px;">处理优势：</div>
-                        <ul>
-                            <li>24小时内完成处理（传统需3-5工作日）</li>
-                            <li>稳定的识别准确率 > 95%</li>
-                            <li>无人工疲劳错误</li>
-                            <li>按需付费，无需长期合同</li>
+                    <div style="background: #fafafa; padding: 20px; border-radius: 12px; margin-top: 20px;">
+                        <div style="color: #1a237e; font-weight: 600; margin-bottom: 12px;">处理优势：</div>
+                        <ul style="color: #455a64; margin: 0; padding-left: 20px; list-style-type: none;">
+                            <li style="display: flex; align-items: center; margin-bottom: 8px;">
+                                <span style="color: #4caf50; margin-right: 10px;">✓</span>
+                                24小时内完成处理（传统需3-5工作日）
+                            </li>
+                            <li style="display: flex; align-items: center; margin-bottom: 8px;">
+                                <span style="color: #4caf50; margin-right: 10px;">✓</span>
+                                免除人工疲劳失误
+                            </li>
+                            <li style="display: flex; align-items: center; margin-bottom: 8px;">
+                                <span style="color: #4caf50; margin-right: 10px;">✓</span>
+                                按需付费
+                            </li>
                         </ul>
                     </div>
                 </div>
                 
-                <div class="comparison-card">
-                    <h3 style="color: var(--primary-color); text-align: center; margin: 0 0 20px 0;">
-                        视频数据结构化提取
-                    </h3>
+                <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+                    <h3 style="color: #1a237e; text-align: center; font-size: 1.5em; margin: 0 0 25px 0;">视频数据结构化提取</h3>
+                    
                     <div style="text-align: center; padding: 25px; background: linear-gradient(145deg, #f5f5f5 0%, #fafafa 100%); border-radius: 12px; margin: 20px 0;">
-                        <div style="color: var(--primary-color); font-size: 2.2em; font-weight: 700;">$80</div>
-                        <div style="color: #666; margin-top: 5px;">每视频小时</div>
+                        <div style="color: #1a237e; font-size: 2.2em; font-weight: 700;">$80</div>
+                        <div style="color: #666; font-size: 1.1em; margin-top: 5px;">每视频小时</div>
                     </div>
                     
-                    <div class="advantage-list">
-                        <ul>
-                            <li>AI智能识别与数据提取</li>
-                            <li>结构化数据输出</li>
-                            <li>最小计费单位：1小时</li>
-                            <li>支持批量处理</li>
+                    <div style="background: #fafafa; padding: 20px; border-radius: 12px;">
+                        <ul style="color: #455a64; margin: 0; padding-left: 20px; list-style-type: none;">
+                            <li style="display: flex; align-items: center; margin-bottom: 8px;">
+                                <span style="color: #4caf50; margin-right: 10px;">✓</span>
+                                AI智能识别与提取
+                            </li>
+                            <li style="display: flex; align-items: center; margin-bottom: 8px;">
+                                <span style="color: #4caf50; margin-right: 10px;">✓</span>
+                                结构化数据输出
+                            </li>
+                            <li style="display: flex; align-items: center; margin-bottom: 8px;">
+                                <span style="color: #4caf50; margin-right: 10px;">✓</span>
+                                最小计费单位：1小时
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="custom-services">
-            <h3>其他定制服务</h3>
-            <p>以上价格仅包含基础AI聊天机器人的部署与使用。其他定制服务需另行评估与计费，例如：</p>
-            <ul>
+        <div style="background: #f8f9fa; border-radius: 15px; padding: 25px; margin-top: 30px; border-left: 5px solid #1a237e;">
+            <h3 style="color: #1a237e; margin-top: 0;">其他定制服务</h3>
+            <p>基础版之外的其他定制服务需另行评估与计费，例如：</p>
+            <ul style="color: #455a64; margin: 15px 0; padding-left: 20px;">
                 <li>网站落地页设计与开发</li>
                 <li>课程选择机制开发</li>
                 <li>支付系统集成与支付处理</li>
                 <li>自定义功能/其他定制化开发需求</li>
             </ul>
-            <p style="color: #455a64; font-style: italic;">具体细节和价格我们详聊 =)</p>
+            <p style="color: #455a64;">（具体细节和价格我们再详聊）</p>
         </div>
     </div>
 </body>
